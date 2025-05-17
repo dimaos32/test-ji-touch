@@ -1,0 +1,88 @@
+import globals from 'globals';
+import pluginJs from '@eslint/js';
+
+export default [
+  {
+    ignores: ['dist/**', 'node_modules/**'],
+  },
+  {
+    files: ['**/*.{js,mjs}'],
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: 'module',
+      globals: globals.browser,
+    },
+    ...pluginJs.configs.recommended,
+    rules: {
+      'semi': ['error', 'always'],
+      'quotes': ['error', 'single', { avoidEscape: true }],
+      'no-console': 'warn',
+      'no-unused-vars': [
+        'warn',
+        {
+          args: 'after-used',
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: 'Props',
+        },
+      ],
+      'no-var': 'error',
+      'prefer-const': 'error',
+      'eqeqeq': 'error',
+      'no-shadow': 'error',
+      'comma-dangle': [
+        'error',
+        {
+          arrays: 'always-multiline',
+          objects: 'always-multiline',
+          imports: 'always-multiline',
+          exports: 'always-multiline',
+          functions: 'always-multiline',
+        },
+      ],
+      'indent': [
+        'error',
+        2,
+        {
+          SwitchCase: 1,
+          VariableDeclarator: 1,
+          MemberExpression: 1,
+          FunctionDeclaration: { parameters: 1 },
+          FunctionExpression: { parameters: 1 },
+          CallExpression: { arguments: 1 },
+          offsetTernaryExpressions: true,
+        },
+      ],
+      'camelcase': 'error',
+      'object-shorthand': ['error', 'always', { avoidQuotes: true }],
+      'arrow-parens': ['error', 'always'],
+      'key-spacing': ['error', { beforeColon: false, afterColon: true }],
+      'space-before-blocks': ['error', 'always'],
+      'space-before-function-paren': [
+        'error',
+        { named: 'never', anonymous: 'always' },
+      ],
+      'no-multiple-empty-lines': ['error', { max: 2 }],
+      'eol-last': ['error', 'always'],
+      'no-trailing-spaces': 'error',
+      'brace-style': ['error', '1tbs', { allowSingleLine: true }],
+      'comma-spacing': ['error', { before: false, after: true }],
+      'keyword-spacing': ['error', { before: true, after: true }],
+      'space-infix-ops': 'error',
+      'block-spacing': ['error', 'always'],
+      'new-cap': 'error',
+      'spaced-comment': ['error', 'always'],
+      'yoda': ['error', 'never'],
+      'no-nested-ternary': 'error',
+      'no-constant-condition': 'error',
+      'no-debugger': 'error',
+      'no-func-assign': 'error',
+      'no-unreachable': 'error',
+      'valid-typeof': 'error',
+      'use-isnan': 'error',
+      'consistent-return': 'error',
+      'no-new-func': 'error',
+      'no-eval': 'error',
+      'no-alert': 'error',
+    },
+  },
+];
