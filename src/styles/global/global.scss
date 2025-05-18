@@ -3,8 +3,11 @@
 @use "./mixins";
 
 :root {
-  --color-site-txt: #{variables.$color-matterhorn};
-  --color-site-bg: #{variables.$color-white};
+  --color-txt: #{variables.$color-matterhorn};
+  --color-txt-secondary: #{variables.$color-night-rider};
+  --color-bg: #{variables.$color-white};
+  --color-bg-dim: #{variables.$color-alice-blue};
+  --color-accent: #{variables.$color-venetian-red};
 
   --container-padding-inline: 90px;
 
@@ -25,7 +28,7 @@
   }
 
   @include mixins.vp-374 {
-    --container-padding-inline: 10px;
+    --container-padding-inline: 15px;
   }
 }
 
@@ -48,9 +51,9 @@ html {
   font-family: variables.$ff-primary;
   font-size: 100%;
   line-height: math.div(19, 16);
-  color: var(--color-site-txt);
+  color: var(--color-txt);
 
-  background-color: var(--color-site-bg);
+  background-color: var(--color-bg);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -66,8 +69,16 @@ body {
   min-inline-size: 320px;
   block-size: 100%;
 
+  font-size: 1rem;
+
   display: grid;
   grid-template-rows: auto 1fr auto;
+
+  @include mixins.vp-575 {
+    margin-block-end: 32px;
+
+    font-size: 0.875rem;
+  }
 }
 
 a {

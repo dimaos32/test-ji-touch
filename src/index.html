@@ -1,31 +1,80 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/index.scss" />
+    <title>Vite App</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/styles/index.scss">
-  <title>Vite App</title>
-</head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="hero__subsection hero__subsection--top">
+          <div class="container">
+            <div class="hero__grid">
+              <div class="hero__slider hero-slider"></div>
+              <div class="hero__content">
+                <h1 class="hero__title">Почему выбирают именно нас?</h1>
+                <div class="hero__presentation">
+                  <p class="hero__presentation-paragraph">
+                    Мы не просто создаём иллюзию работы, а действительно
+                    выполняем её, гарантируя безупречный результат
+                    и предоставляя гарантии.
+                  </p>
+                  <p class="hero__presentation-paragraph">
+                    После завершения всех процедур в нашем детейлинг-центре, ваш
+                    автомобиль будет выглядеть как новый.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<body>
-  <header>
-    <div class="container">
-      header
-    </div>
-  </header>
-  <main>
-    <div class="container">
-      main
-    </div>
-  </main>
-  <footer>
-    <div class="container">
-      footer
-    </div>
-  </footer>
-  <script type="module" src="/scripts/index.js"></script>
-</body>
+        <div class="hero__subsection hero__subsection--bottom">
+          <div class="container">
+            <div class="hero__grid">
+              <div class="hero__content">
+                <ol class="hero__features hero-features">
+                  <li class="hero-features__item">
+                    <h2 class="hero-features__title">Команда профессионалов</h2>
+                    <p class="hero-features__desc">
+                      Работаем с 2010 года, все мастера имеют соответствующую
+                      аттестацию.
+                    </p>
+                  </li>
 
+                  <li class="hero-features__item">
+                    <h2 class="hero-features__title">Честная смета</h2>
+                    <p class="hero-features__desc">
+                      После первичной консультации озвучиваем стоимость наших
+                      услуг.
+                    </p>
+                  </li>
+
+                  <li class="hero-features__item">
+                    <h2 class="hero-features__title">Договор и гарантии</h2>
+                    <p class="hero-features__desc">
+                      Заключаем договор, даём 3 года гарантии на свои работы.
+                    </p>
+                  </li>
+
+                  <li class="hero-features__item">
+                    <h2 class="hero-features__title">Оплата по факту</h2>
+                    <p class="hero-features__desc">
+                      Наличная и безналичная формы оплаты после завершения всех
+                      работ.
+                    </p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/scripts/index.js"></script>
+  </body>
 </html>
