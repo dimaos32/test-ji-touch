@@ -1,7 +1,8 @@
 @use "sass:math";
 @use "@styles/global/mixins";
+@use "@styles/global/functions" as *;
 
-$feature-padding-inline-start: 36px;
+$feature-padding-inline-start: transform-to-rem(36px);
 
 .hero-features {
   counter-reset: features;
@@ -10,23 +11,23 @@ $feature-padding-inline-start: 36px;
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 59px 89px;
+  gap: transform-to-rem(59px) transform-to-rem(89px);
 
   @include mixins.vp-1023 {
-    gap: 44px 64px;
+    gap: transform-to-rem(44px) transform-to-rem(64px);
   }
 
   @include mixins.vp-575 {
-    gap: 34px 52px;
+    gap: transform-to-rem(34px) transform-to-rem(52px);
   }
 
   &__item {
     inline-size: 100%;
-    max-inline-size: 335px;
+    max-inline-size: transform-to-rem(335px);
     padding-inline-start: $feature-padding-inline-start;
 
     @include mixins.vp-575 {
-      max-inline-size: 310px;
+      max-inline-size: transform-to-rem(310px);
     }
   }
 
@@ -35,30 +36,30 @@ $feature-padding-inline-start: 36px;
 
     display: flex;
     align-items: flex-start;
-    gap: 6px;
+    gap: transform-to-rem(6px);
     margin: 0;
     margin-inline-start: -$feature-padding-inline-start;
 
     font-weight: 700;
-    font-size: 20px;
+    font-size: transform-to-rem(20px);
     line-height: math.div(24, 20);
     text-transform: uppercase;
 
     &:not(:last-child) {
-      margin-block-end: 20px;
+      margin-block-end: transform-to-rem(20px);
     }
 
     &::before {
       content: counter(features, decimal-leading-zero);
 
       flex-shrink: 0;
-      inline-size: 30px;
+      inline-size: transform-to-rem(30px);
 
       color: var(--color-accent);
     }
 
     @include mixins.vp-575 {
-      font-size: 18px;
+      font-size: transform-to-rem(18px);
       line-height: math.div(22, 18);
     }
   }

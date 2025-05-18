@@ -19,11 +19,11 @@ export const initHeroSliders = () => {
   sliders.forEach((slider) => {
     new Swiper(slider, {
       modules: [EffectCreative, Navigation, Autoplay, Mousewheel],
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
+      // autoplay: {
+      //   delay: 4000,
+      //   disableOnInteraction: false,
+      //   pauseOnMouseEnter: true,
+      // },
       speed: 600,
       threshold: 10,
       touchRatio: 1,

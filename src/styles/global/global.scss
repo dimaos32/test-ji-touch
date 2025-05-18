@@ -1,6 +1,7 @@
 @use "sass:math";
 @use "./variables";
 @use "./mixins";
+@use "./functions" as *;
 
 :root {
   --color-txt: #{variables.$color-matterhorn};
@@ -11,26 +12,26 @@
   --color-accent: #{variables.$color-venetian-red};
   --color-accent-action: #{variables.$color-persimmon};
 
-  --container-padding-inline: 90px;
+  --container-padding-inline: #{transform-to-rem(90px)};
 
   @include mixins.vp-1679 {
-    --container-padding-inline: 60px;
+    --container-padding-inline: #{transform-to-rem(60px)};
   }
 
   @include mixins.vp-1439 {
-    --container-padding-inline: 40px;
+    --container-padding-inline: #{transform-to-rem(40px)};
   }
 
   @include mixins.vp-1023 {
-    --container-padding-inline: 30px;
+    --container-padding-inline: #{transform-to-rem(30px)};
   }
 
   @include mixins.vp-767 {
-    --container-padding-inline: 20px;
+    --container-padding-inline: #{transform-to-rem(20px)};
   }
 
   @include mixins.vp-374 {
-    --container-padding-inline: 15px;
+    --container-padding-inline: #{transform-to-rem(15px)};
   }
 }
 
@@ -53,9 +54,6 @@ html {
   font-family: variables.$ff-primary;
   font-size: 100%;
   line-height: math.div(19, 16);
-  color: var(--color-txt);
-
-  background-color: var(--color-bg);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -67,19 +65,20 @@ html {
 }
 
 body {
-  inline-size: 100%;
-  min-inline-size: 320px;
-  block-size: 100%;
-
-  font-size: 1rem;
-
   display: grid;
   grid-template-rows: auto 1fr auto;
+  inline-size: 100%;
+  min-inline-size: transform-to-rem(320px);
+  block-size: 100%;
+
+  font-size: transform-to-rem(16px);
+  line-height: math.div(19, 16);
+  color: var(--color-txt);
+
+  background-color: var(--color-bg);
 
   @include mixins.vp-575 {
-    margin-block-end: 32px;
-
-    font-size: 0.875rem;
+    font-size: transform-to-rem(14px);
   }
 }
 

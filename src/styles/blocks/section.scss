@@ -1,7 +1,8 @@
 @use "@styles/global/mixins";
+@use "@styles/global/functions" as *;
 
 section {
-  margin-block: 70px;
+  margin-block: transform-to-rem(70px);
 
   &.has-dim-bg {
     margin-block-start: 0;
@@ -11,10 +12,10 @@ section {
   }
 
   @include mixins.vp-1199 {
-    margin-block: 60px;
+    margin-block: transform-to-rem(60px);
   }
 
   @include mixins.vp-575 {
-    margin-block: 34px;
+    margin-block: transform-to-rem(34px);
   }
 }

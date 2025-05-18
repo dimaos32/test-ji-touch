@@ -1,0 +1,18 @@
+@use "sass:math";
+
+$base-font-size: 16px;
+
+@function transform-to-rem($pixels, $base: $base-font-size) {
+  @if $pixels == 0 {
+    @return 0;
+  }
+
+  $px: if(math.is-unitless($pixels), $pixels, math.div($pixels, 1px));
+  $base-px: if(math.is-unitless($base), $base, math.div($base, 1px));
+
+  @if $base-px == 0 {
+    $base-px: $base-font-size;
+  }
+
+  @return math.div($px, $base-px) * 1rem;
+}

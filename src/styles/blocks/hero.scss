@@ -1,16 +1,34 @@
+@use "sass:map";
 @use "sass:math";
 @use "@styles/global/mixins";
+@use "@styles/global/functions" as *;
 
-$padding-block-end: 70px;
-$padding-block-end-sm: 60px;
-$slider-size: 600px;
-$slider-size-sm: 500px;
+$slider-vertical-shift: transform-to-rem(10px);
+$slider-horizontal-shift: transform-to-rem(4px);
+
+$padding-block-end-map: (
+  md: transform-to-rem(70px),
+  sm: transform-to-rem(60px)
+);
+
+$slider-size-map: (
+  md: transform-to-rem(600px),
+  sm: transform-to-rem(500px)
+);
+
+@function padding-block-end($breakpoint: md) {
+  @return map.get($padding-block-end-map, $breakpoint);
+}
+
+@function slider-size($breakpoint: md) {
+  @return map.get($slider-size-map, $breakpoint);
+}
 
 .hero {
   display: grid;
   grid-template-rows: auto 1fr;
 
-  min-block-size: $padding-block-end + $slider-size;
+  min-block-size: padding-block-end() + slider-size() + $slider-vertical-shift;
   margin-block-end: 0;
 
   @include mixins.vp-1199 {
@@ -23,49 +41,49 @@ $slider-size-sm: 500px;
 
   &__subsection {
     &--top {
-      margin-block-end: 58px;
+      margin-block-end: transform-to-rem(58px);
     }
 
     &--bottom {
-      padding-block-start: 66px;
-      padding-block-end: $padding-block-end;
+      padding-block-start: transform-to-rem(66px);
+      padding-block-end: padding-block-end();
       background-color: var(--color-bg-dim);
     }
 
     @include mixins.vp-1199 {
       &--top {
-        margin-block-end: 44px;
+        margin-block-end: transform-to-rem(44px);
       }
 
       &--bottom {
-        padding-block-start: 44px;
-        padding-block-end: $padding-block-end-sm;
+        padding-block-start: transform-to-rem(44px);
+        padding-block-end: padding-block-end(sm);
       }
     }
 
     @include mixins.vp-575 {
       &--top {
-        margin-block-end: 32px;
+        margin-block-end: transform-to-rem(32px);
       }
 
       &--bottom {
-        padding-block-start: 44px;
-        padding-block-end: 34px;
+        padding-block-start: transform-to-rem(44px);
+        padding-block-end: transform-to-rem(34px);
       }
     }
   }
 
   &__grid {
     display: grid;
-    grid-template-columns: $slider-size 1fr;
-    gap: 72px 110px;
+    grid-template-columns: slider-size() 1fr;
+    gap: transform-to-rem(72px) transform-to-rem(110px);
 
     @include mixins.vp-1199 {
       grid-template-columns: 1fr;
-      gap: 42px 72px;
+      gap: transform-to-rem(42px) transform-to-rem(72px);
 
       &:has(.hero__slider) {
-        grid-template-columns: $slider-size-sm 1fr;
+        grid-template-columns: slider-size(sm) 1fr;
       }
     }
 
@@ -82,21 +100,21 @@ $slider-size-sm: 500px;
     position: relative;
     z-index: 2;
 
-    inline-size: $slider-size;
-    block-size: $slider-size;
-    margin-block-start: 10px;
-    margin-block-end: -$slider-size;
-    margin-inline-start: 4px;
+    inline-size: slider-size();
+    block-size: slider-size();
+    margin-block-start: $slider-vertical-shift;
+    margin-block-end: -1 * slider-size();
+    margin-inline-start: $slider-horizontal-shift;
 
     @include mixins.vp-1199 {
-      inline-size: $slider-size-sm;
-      block-size: $slider-size-sm;
+      inline-size: slider-size(sm);
+      block-size: slider-size(sm);
       margin-block-end: 0;
     }
 
     @include mixins.vp-1023 {
       inline-size: 100%;
-      max-inline-size: $slider-size;
+      max-inline-size: slider-size();
       block-size: unset;
       aspect-ratio: 1;
       margin-block-start: 0;
@@ -121,45 +139,45 @@ $slider-size-sm: 500px;
     margin: 0;
 
     font-weight: 600;
-    font-size: 40px;
+    font-size: transform-to-rem(40px);
     line-height: math.div(48, 40);
     color: var(--color-txt-secondary);
 
     &:not(:last-child) {
-      margin-block-end: 42px;
+      margin-block-end: transform-to-rem(42px);
     }
 
     @include mixins.vp-1199 {
       &:not(:last-child) {
-        margin-block-end: 34px;
+        margin-block-end: transform-to-rem(34px);
       }
     }
 
     @include mixins.vp-575 {
-      font-size: 28px;
+      font-size: transform-to-rem(28px);
       line-height: math.div(34, 28);
       color: var(--color-txt-secondary);
 
       &:not(:last-child) {
-        margin-block-end: 28px;
+        margin-block-end: transform-to-rem(28px);
       }
     }
   }
 
   &__presentation {
     &:not(:last-child) {
-      margin-block-end: 42px;
+      margin-block-end: transform-to-rem(42px);
     }
 
     @include mixins.vp-1199 {
       &:not(:last-child) {
-        margin-block-end: 34px;
+        margin-block-end: transform-to-rem(34px);
       }
     }
 
     @include mixins.vp-575 {
       &:not(:last-child) {
-        margin-block-end: 28px;
+        margin-block-end: transform-to-rem(28px);
       }
     }
   }
@@ -167,7 +185,7 @@ $slider-size-sm: 500px;
   &__presentation-paragraph {
     margin: 0;
 
-    font-size: 24px;
+    font-size: transform-to-rem(24px);
     line-height: math.div(28, 24);
 
     &:not(:last-child) {
@@ -175,25 +193,25 @@ $slider-size-sm: 500px;
     }
 
     @include mixins.vp-575 {
-      font-size: 20px;
+      font-size: transform-to-rem(20px);
       line-height: math.div(24, 20);
     }
   }
 
   &__features {
     &:not(:last-child) {
-      margin-block-end: 42px;
+      margin-block-end: transform-to-rem(42px);
     }
 
     @include mixins.vp-1199 {
       &:not(:last-child) {
-        margin-block-end: 34px;
+        margin-block-end: transform-to-rem(34px);
       }
     }
 
     @include mixins.vp-575 {
       &:not(:last-child) {
-        margin-block-end: 28px;
+        margin-block-end: transform-to-rem(28px);
       }
     }
   }

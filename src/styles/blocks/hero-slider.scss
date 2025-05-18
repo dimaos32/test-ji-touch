@@ -1,4 +1,5 @@
 @use "@styles/global/mixins";
+@use "@styles/global/functions" as *;
 
 .hero-slider {
   position: relative;
@@ -23,47 +24,47 @@
   &__action-btn {
     position: absolute;
     z-index: 2;
-    inset-inline-start: 42px;
-    inset-block-end: 47px;
+    inset-inline-start: transform-to-rem(42px);
+    inset-block-end: transform-to-rem(47px);
 
     @include mixins.vp-1199 {
-      inset-inline-start: 24px;
-      inset-block-end: 29px;
+      inset-inline-start: transform-to-rem(24px);
+      inset-block-end: transform-to-rem(29px);
     }
 
     @include mixins.vp-1023 {
-      inset-inline-start: 42px;
-      inset-block-end: 47px;
+      inset-inline-start: transform-to-rem(42px);
+      inset-block-end: transform-to-rem(47px);
     }
 
     @include mixins.vp-575 {
-      inset-inline-start: 24px;
-      inset-block-end: 29px;
+      inset-inline-start: transform-to-rem(24px);
+      inset-block-end: transform-to-rem(29px);
     }
   }
 
   &__controls {
     position: absolute;
     z-index: 2;
-    inset-inline-end: 26px;
-    inset-block-end: 58px;
+    inset-inline-end: transform-to-rem(28px);
+    inset-block-end: transform-to-rem(57px);
     display: flex;
-    gap: 10px;
+    gap: transform-to-rem(8px);
 
     @include mixins.vp-1199 {
-      inset-inline-end: 12px;
-      inset-block-end: 40px;
+      inset-inline-end: transform-to-rem(14px);
+      inset-block-end: transform-to-rem(39px);
     }
 
     @include mixins.vp-1023 {
-      inset-inline-end: 26px;
-      inset-block-end: 58px;
+      inset-inline-end: transform-to-rem(28px);
+      inset-block-end: transform-to-rem(57px);
 
       @include mixins.vp-575 {
         display: none;
 
-        inset-inline-end: 12px;
-        inset-block-end: 40px;
+        inset-inline-end: transform-to-rem(14px);
+        inset-block-end: transform-to-rem(39px);
       }
     }
   }

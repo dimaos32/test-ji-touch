@@ -1,19 +1,20 @@
 @use "sass:math";
 @use "@styles/global/variables";
 @use "@styles/global/mixins";
+@use "@styles/global/functions" as *;
 
 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-inline-size: 275px;
-  min-block-size: 65px;
-  padding-block: 16px;
-  padding-inline: 24px;
+  min-inline-size: transform-to-rem(275px);
+  min-block-size: transform-to-rem(65px);
+  padding-block: transform-to-rem(16px);
+  padding-inline: transform-to-rem(24px);
 
   font-family: inherit;
   font-weight: 700;
-  font-size: 18px;
+  font-size: transform-to-rem(18px);
   line-height: math.div(22, 18);
   text-transform: uppercase;
   color: var(--color-txt-inverted);
@@ -40,19 +41,19 @@
   }
 
   @include mixins.vp-575 {
-    min-inline-size: 260px;
-    min-block-size: 55px;
-    padding-block: 12px;
-    padding-inline: 20px;
+    min-inline-size: transform-to-rem(260px);
+    min-block-size: transform-to-rem(55px);
+    padding-block: transform-to-rem(12px);
+    padding-inline: transform-to-rem(20px);
 
     font-size: 16px;
     line-height: math.div(20, 16);
   }
 
   @include mixins.vp-374 {
-    min-inline-size: 260px;
-    min-block-size: 48px;
-    padding-block: 10px;
-    padding-inline: 16px;
+    min-inline-size: transform-to-rem(260px);
+    min-block-size: transform-to-rem(48px);
+    padding-block: transform-to-rem(10px);
+    padding-inline: transform-to-rem(16px);
   }
 }

@@ -1,4 +1,5 @@
-$color-black: #000000;
+@use "./functions" as *;
+
 $color-night-rider: #333333;
 $color-matterhorn: #555555;
 $color-white: #ffffff;
@@ -9,14 +10,13 @@ $color-venetian-red: #dc0306;
 $color-persimmon: #e64712;
 
 $ff-primary: "Gilroy", sans-serif;
-$fz-default: 16px;
 
-$vp-1680: 1680px;
-$vp-1440: 1440px;
-$vp-1200: 1200px;
-$vp-1024: 1024px;
-$vp-768: 768px;
-$vp-576: 576px;
-$vp-375: 375px;
+$vp-1680: transform-to-rem(1680px);
+$vp-1440: transform-to-rem(1440px);
+$vp-1200: transform-to-rem(1200px);
+$vp-1024: transform-to-rem(1024px);
+$vp-768: transform-to-rem(768px);
+$vp-576: transform-to-rem(576px);
+$vp-375: transform-to-rem(375px);
 
 $transition: 0.3s ease;

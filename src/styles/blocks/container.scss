@@ -1,27 +1,28 @@
 @use "@styles/global/mixins";
+@use "@styles/global/functions" as *;
 
 .container {
-  max-inline-size: 1680px;
+  max-inline-size: transform-to-rem(1680px);
   margin-inline: auto;
   padding-inline: var(--container-padding-inline);
 
   @include mixins.vp-1679 {
-    max-inline-size: 1620px;
+    max-inline-size: transform-to-rem(1620px);
   }
 
   @include mixins.vp-1439 {
-    max-inline-size: 1400px;
+    max-inline-size: transform-to-rem(1400px);
   }
 
   @include mixins.vp-1023 {
-    max-inline-size: 1004px;
+    max-inline-size: transform-to-rem(1004px);
   }
 
   @include mixins.vp-767 {
-    max-inline-size: 748px;
+    max-inline-size: transform-to-rem(748px);
   }
 
   @include mixins.vp-374 {
-    max-inline-size: 365px;
+    max-inline-size: transform-to-rem(365px);
   }
 }
