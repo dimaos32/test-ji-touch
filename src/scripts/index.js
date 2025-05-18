@@ -1,3 +1,5 @@
+import { initSliders } from '@scripts/sliders';
+
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOM content loaded');
+  initSliders();
 });

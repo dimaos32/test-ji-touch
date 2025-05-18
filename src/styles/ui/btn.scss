@@ -1,0 +1,58 @@
+@use "sass:math";
+@use "@styles/global/variables";
+@use "@styles/global/mixins";
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-inline-size: 275px;
+  min-block-size: 65px;
+  padding-block: 16px;
+  padding-inline: 24px;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: math.div(22, 18);
+  text-transform: uppercase;
+  color: var(--color-txt-inverted);
+
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: 2px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+
+  transition:
+    background-color variables.$transition,
+    outline-color variables.$transition;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-accent-action);
+  }
+
+  &:focus-visible {
+    background-color: var(--color-accent-action);
+    outline-color: var(--color-accent-action);
+  }
+
+  @include mixins.vp-575 {
+    min-inline-size: 260px;
+    min-block-size: 55px;
+    padding-block: 12px;
+    padding-inline: 20px;
+
+    font-size: 16px;
+    line-height: math.div(20, 16);
+  }
+
+  @include mixins.vp-374 {
+    min-inline-size: 260px;
+    min-block-size: 48px;
+    padding-block: 10px;
+    padding-inline: 16px;
+  }
+}

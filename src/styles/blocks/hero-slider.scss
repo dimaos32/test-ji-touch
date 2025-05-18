@@ -1,0 +1,70 @@
+@use "@styles/global/mixins";
+
+.hero-slider {
+  position: relative;
+
+  &__slides {
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+  }
+
+  &__slide {
+    position: relative;
+  }
+
+  &__slide-cover {
+    inline-size: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+
+  &__action-btn {
+    position: absolute;
+    z-index: 2;
+    inset-inline-start: 42px;
+    inset-block-end: 47px;
+
+    @include mixins.vp-1199 {
+      inset-inline-start: 24px;
+      inset-block-end: 29px;
+    }
+
+    @include mixins.vp-1023 {
+      inset-inline-start: 42px;
+      inset-block-end: 47px;
+    }
+
+    @include mixins.vp-575 {
+      inset-inline-start: 24px;
+      inset-block-end: 29px;
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    z-index: 2;
+    inset-inline-end: 26px;
+    inset-block-end: 58px;
+    display: flex;
+    gap: 10px;
+
+    @include mixins.vp-1199 {
+      inset-inline-end: 12px;
+      inset-block-end: 40px;
+    }
+
+    @include mixins.vp-1023 {
+      inset-inline-end: 26px;
+      inset-block-end: 58px;
+
+      @include mixins.vp-575 {
+        display: none;
+
+        inset-inline-end: 12px;
+        inset-block-end: 40px;
+      }
+    }
+  }
+}

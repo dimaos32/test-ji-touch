@@ -1,4 +1,8 @@
 @use "@csstools/normalize.css";
+@use "swiper/css";
+//
+@use "@styles/ui/btn";
+@use "@styles/ui/slider-btn";
 //
 @use "@styles/global/fonts";
 @use "@styles/global/global";
@@ -7,4 +11,5 @@
 @use "@styles/blocks/container";
 //
 @use "@styles/blocks/hero";
+@use "@styles/blocks/hero-slider";
 @use "@styles/blocks/hero-features";

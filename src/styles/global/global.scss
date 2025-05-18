@@ -5,9 +5,11 @@
 :root {
   --color-txt: #{variables.$color-matterhorn};
   --color-txt-secondary: #{variables.$color-night-rider};
+  --color-txt-inverted: #{variables.$color-white};
   --color-bg: #{variables.$color-white};
   --color-bg-dim: #{variables.$color-alice-blue};
   --color-accent: #{variables.$color-venetian-red};
+  --color-accent-action: #{variables.$color-persimmon};
 
   --container-padding-inline: 90px;
 

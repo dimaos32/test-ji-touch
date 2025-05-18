@@ -88,8 +88,6 @@ $slider-size-sm: 500px;
     margin-block-end: -$slider-size;
     margin-inline-start: 4px;
 
-    background-color: var(--color-accent);
-
     @include mixins.vp-1199 {
       inline-size: $slider-size-sm;
       block-size: $slider-size-sm;

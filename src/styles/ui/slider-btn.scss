@@ -1,0 +1,58 @@
+@use "@styles/global/variables";
+
+.slider-btn {
+  position: relative;
+  inline-size: 44px;
+  block-size: 44px;
+  padding: 0;
+
+  color: var(--color-accent);
+
+  background-color: transparent;
+  border: none;
+  border-radius: 2px;
+  outline: 1px solid transparent;
+
+  transition:
+    color variables.$transition,
+    outline-color variables.$transition;
+
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: currentColor;
+
+    clip-path: polygon(
+      8px 10px,
+      28px 10px,
+      38px 22px,
+      28px 34px,
+      20px 34px,
+      30px 22px,
+      20px 10px,
+      16px 10px,
+      26px 22px,
+      16px 34px,
+      8px 34px,
+      18px 22px
+    );
+  }
+
+  &--prev {
+    &::before {
+      transform: scaleX(-1);
+    }
+  }
+
+  &:hover {
+    color: var(--color-accent-action);
+  }
+
+  &:focus-visible {
+    color: var(--color-accent-action);
+    outline-color: var(--color-accent-action);
+  }
+}
