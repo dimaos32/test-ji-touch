@@ -1,3 +1,4 @@
-body {
-  background-color: #ffdd99;
-}
+@use "@styles/global/fonts";
+@use "@styles/global/global";
+//
+@use "@styles/blocks/container";

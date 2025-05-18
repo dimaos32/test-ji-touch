@@ -1,0 +1,31 @@
+@use "./variables";
+
+@mixin vp-1679 {
+  @media (max-width: (variables.$vp-1680 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-1439 {
+  @media (max-width: (variables.$vp-1440 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-1023 {
+  @media (max-width: (variables.$vp-1024 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-767 {
+  @media (max-width: (variables.$vp-768 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-374 {
+  @media (max-width: (variables.$vp-375 - 1px)) {
+    @content;
+  }
+}
