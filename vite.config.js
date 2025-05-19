@@ -62,8 +62,16 @@ export default defineConfig({
         main: resolve(srcDir, 'scripts/index.js'),
       },
       output: {
-        assetFileNames: 'assets/[name].[hash][extname]',
-        entryFileNames: 'assets/[name].[hash].js',
+        assetFileNames: (assetInfo) => {
+          const ext = assetInfo.name.split('.').pop();
+
+          if (['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp', 'avif'].includes(ext)) {
+            return 'assets/images/[name][extname]';
+          }
+
+          return 'assets/[name]-[hash][extname]';
+        },
+        entryFileNames: 'assets/[name]-[hash].js',
         manualChunks: undefined,
       },
     },
